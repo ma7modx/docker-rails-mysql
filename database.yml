@@ -1,0 +1,10 @@
+development:
+  adapter: mysql2
+  encoding: utf8
+  reconnect: false
+  database: er_rental_development
+  pool: 5
+  username: dev
+  password: 123456
+  host: <%= ENV['MYSQL_PORT_3306_TCP_ADDR'] %>
+  port: <%= ENV['MYSQL_PORT_3306_TCP_PORT'] %> 
