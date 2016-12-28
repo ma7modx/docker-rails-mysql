@@ -17,7 +17,7 @@
     ```sh
     docker-compose build
     
-    docker-compose up -d db
+    docker-compose up -d mysql
 
     docker-compose run app bash -l -c "rake db:create"
     
