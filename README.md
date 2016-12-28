@@ -45,7 +45,14 @@
   docker-compose up --build -d
   ```
 ### Notes
-  - most latest mysql versions may raise error if primary key settings is not defined, so you will need to add this:
+  - installing ruby without rvm will save you the hassle of running bash everytime in login shell to be able to acess it
+  - to get your docker environment variables run:
+
+  ```sh 
+  docker-compose run [service] env
+  ```
+  - exposing port 80 is needed for http requests, and 443 for https.
+  - most of the latest mysql versions may raise error if primary key settings is not defined, if you faced it you will need to add this:
   
   ```ruby 
   # config/initializers/abstract_mysql2_adapter.rb  
@@ -53,10 +60,4 @@
      NATIVE_DATABASE_TYPES[:primary_key] = "int(11) auto_increment PRIMARY KEY"
    end
   ```
-  - installing ruby without rvm will save you the hassle of running bash everytime in login shell to be able to acess it
-  - exposing port 80 is needed for http requests, and 443 for https.
-  - to get your docker environment variables run 
-
-  ```sh 
-  docker-composer run [service] env
-  ```
+  
